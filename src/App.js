@@ -33,9 +33,7 @@ import CreateCategory from "./components/core/Category/CreateCategory";
 
 function App() {
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  
+    
   const { user } = useSelector((state) => state.profile)
 
 

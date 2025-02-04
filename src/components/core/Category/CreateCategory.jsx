@@ -1,7 +1,7 @@
 import { useState } from "react"
 // import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useDispatch, useSelector } from "react-redux"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 // import { login } from "../../../services/operations/authAPI"
 import { createCategory } from "../../../services/operations/courseDetailsAPI"
