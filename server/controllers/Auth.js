@@ -149,7 +149,7 @@ exports.login = async (req, res) => {
 				}
 			);
 
-			// Save token to user document in database
+			// Save token to user document 
 			user.token = token;
 			user.password = undefined;
 			// Set cookie for token and return success response
@@ -269,9 +269,17 @@ exports.changePassword = async (req, res) => {
 				updatedUserDetails.email,
 				passwordUpdated(
 					updatedUserDetails.email,
-					`Password updated successfully for ${updatedUserDetails.firstName} ${updatedUserDetails.lastName}`
+					`Password updated successfully for ${updatedUserDetails.firstName} ${updatedUserDetails.lastName}`  // third arg for mailsender
 				)
 			);
+
+			// simplified way to call upper function 
+			// const email = updatedUserDetails.email;
+			// const title = passwordUpdated(email, `Password updated successfully for ${updatedUserDetails.firstName} ${updatedUserDetails.lastName}`);
+			// const body = `Password updated successfully for ${updatedUserDetails.firstName} ${updatedUserDetails.lastName}`;
+
+			// const emailResponse = await mailSender(email, title, body);
+
 			console.log("Email sent successfully:", emailResponse.response);
 		} catch (error) {
 			// If there's an error sending the email, log the error and return a 500 (Internal Server Error) error
